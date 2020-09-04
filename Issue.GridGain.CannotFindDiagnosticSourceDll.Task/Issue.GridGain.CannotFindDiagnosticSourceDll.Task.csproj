@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="GridGain.Ignite" Version="8.7.21" />
+        <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="4.6.0" />
+    </ItemGroup>
+
+    <PropertyGroup>
+        <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    </PropertyGroup>
+
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+      <Exec Command="xcopy &quot;$(TargetDir)libs&quot;  &quot;$(ProjectDir)..\gridgain-dotnet-8.7.21\libs&quot; /D /Y /E /I&#xD;&#xA;copy /Y &quot;$(TargetDir)$(TargetFileName)&quot; &quot;$(ProjectDir)..\gridgain-dotnet-8.7.21\&quot; &#xD;&#xA;copy /Y &quot;$(TargetDir)System.Diagnostics.DiagnosticSource.dll&quot; &quot;$(ProjectDir)..\gridgain-dotnet-8.7.21\&quot; &#xD;&#xA;" />
+    </Target>
+
+</Project>

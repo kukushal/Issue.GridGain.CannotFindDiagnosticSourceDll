@@ -348,3 +348,9 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+# Custom
+gridgain-dotnet-8.7.21/Issue.GridGain.CannotFindDiagnosticSourceDll.Task.dll
+gridgain-dotnet-8.7.21/System.Diagnostics.DiagnosticSource.dll
+gridgain-dotnet-8.7.21/libs/
+ignite/
